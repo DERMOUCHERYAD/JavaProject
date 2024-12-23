@@ -1,0 +1,54 @@
+
+# Résumé des commentaires pour la classe ConfigColonie
+
+## Description générale
+La classe `ConfigColonie` gère la configuration et la sauvegarde des données liées à une colonie. Elle permet de lire un fichier de configuration pour initialiser les colons, ressources et relations, tout en validant les données. Elle propose également une fonctionnalité pour sauvegarder les solutions.
+
+## Attributs
+- **`FichierConfig`** : Chemin du fichier de configuration.
+- **`colonieConfig`** : Instance de la colonie configurée à partir du fichier.
+- **`RED_TEXT` et `RESET_TEXT`** : Constantes pour la coloration des messages dans la console.
+
+## Méthodes
+
+### `ConfigColonie(String filePath)`
+Constructeur qui initialise le chemin du fichier de configuration.
+
+### `Colonie LireFichierConfig()`
+- Lit et valide le fichier de configuration.
+- Initialise une instance de `Colonie` avec les données des colons, ressources, relations et préférences.
+- Vérifie :
+  - Les noms alphanumériques.
+  - Les duplications de colons ou ressources.
+  - La correspondance entre le nombre de colons et de ressources.
+- Retourne l'objet `Colonie` configuré.
+
+### `void sauvegarderSolution(String nomFichier)`
+- Sauvegarde les affectations des ressources dans un fichier spécifié.
+- Valide que le fichier de sauvegarde est différent du fichier de configuration.
+- Crée le fichier si nécessaire.
+
+### Méthodes utilitaires privées
+#### `String extraireNom(String ligne, String type, int ligneIndex)`
+- Extrait un nom unique alphanumérique d'une ligne de type donné.
+#### `String extraireNomString(String ligne, String type, int ligneIndex)`
+- Extrait une chaîne brute d'une ligne.
+#### `String[] extraireDeuxNoms(String ligne, String type, int ligneIndex)`
+- Extrait deux noms distincts d'une relation.
+#### `String[] extrairePreferences(String ligne, int ligneIndex)`
+- Extrait une liste de préférences depuis une ligne.
+
+## Validation des données
+- Les colons, ressources, relations et préférences sont strictement validés pour assurer l'intégrité des données.
+- Les erreurs sont explicitement signalées avec des messages descriptifs.
+
+## Exceptions
+- Lève des exceptions en cas :
+  - De fichier inexistant.
+  - D'erreurs de format ou de contenu dans le fichier.
+  - D'accès en écriture non autorisé lors de la sauvegarde.
+
+## Utilisation
+1. Instancier avec le chemin d'un fichier de configuration.
+2. Appeler `LireFichierConfig()` pour charger et valider les données.
+3. Appeler `sauvegarderSolution(String nomFichier)` pour sauvegarder les affectations.

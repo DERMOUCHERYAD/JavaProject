@@ -1,0 +1,30 @@
+
+Class: Colonie
+Description: Represents a colony with a list of members (colons), available resources, and jealousy relationships.
+
+Attributes:
+- ListeColons: List of colons (members) in the colony.
+- RessourceList: List of resources available in the colony.
+- ListeRelation: List of jealousy relationships between colons.
+- RED_TEXT: String for displaying error messages in red.
+- RESET_TEXT: String for resetting text color after a message.
+
+Methods:
+1. Constructor Colonie(): Initializes an empty colony.
+2. Constructor Colonie(Colonie autre): Creates a copy of an existing colony.
+3. afficherListeColons(): Displays the list of colons in the colony.
+4. affichageRessource(): Displays the resources assigned to each colon.
+5. ajoutColon(Colon c): Adds a colon to the colony.
+6. neSontPasAmis(Colon c1, Colon c2): Checks if two colons are not friends (jealousy conflict).
+7. ajoutRessources(String objet): Adds a resource to the list of available resources.
+8. getRessourceList(): Returns the list of resources in the colony.
+9. getColon(String nom): Finds and returns a colon by name.
+10. ajoutListeRelation(Relation p): Adds a jealousy relationship between two colons.
+11. afficheRelation(): Displays all jealousy relationships in the colony.
+12. getListeColons(): Returns the list of colons in the colony.
+13. getListeRelation(): Returns the list of jealousy relationships in the colony.
+14. nombreRessources(): Returns the number of resources available in the colony.
+15. getJalousie(): Calculates and returns the jealousy cost of the current resource assignments.
+16. assignerRessource(Colon colon, String ressource): Assigns a resource to a colon.
+
+Note: The class includes validation and exception handling for invalid relationships, resources, or assignments.

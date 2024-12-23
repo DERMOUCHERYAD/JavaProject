@@ -1,0 +1,27 @@
+
+**Summary of Comments for Relation Class:**
+
+1. **Constructors:**
+   - `Relation(Colon c1, Colon c2)`: Initializes a relation between two different colon objects. Throws an exception if both colons are the same.
+   - `Relation(Relation autre)`: Copy constructor, creates a deep copy of an existing relation.
+
+2. **Attributes:**
+   - `c1`: First colon involved in the relation.
+   - `c2`: Second colon involved in the relation.
+
+3. **Methods:**
+   - `getC1()`: Returns the first colon (`c1`) in the relation.
+   - `setC1(Colon c1)`: Sets the first colon. Throws an exception if `c1` is the same as `c2`.
+   - `getC2()`: Returns the second colon (`c2`) in the relation.
+   - `setC2(Colon c2)`: Sets the second colon. Throws an exception if `c2` is the same as `c1`.
+   - `getRelation()`: Returns a formatted string describing the relation between `c1` and `c2`.
+   - `equals(Object o)`: Overrides the default equals method to ensure equality based on the two colons, regardless of their order.
+   - `hashCode()`: Custom hash code generation considering the unordered nature of the relation.
+   - `toString()`: Returns a string representation of the relation with the names of the colons.
+
+4. **Validation Rules:**
+   - A relation must always involve two different colons. Exceptions are thrown for invalid operations.
+   - Equality and hash codes are calculated independent of the order of `c1` and `c2`.
+
+5. **Usage:**
+   - The class ensures that relationships between colons are unique and bidirectional. It facilitates the storage and validation of such relations in a colony context.

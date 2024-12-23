@@ -1,0 +1,34 @@
+
+Class: Colon
+
+Description:
+Represents an individual colonist with a name, a list of resource preferences, 
+and an assigned resource. Provides methods for preference management and resource assignment.
+
+Attributes:
+- nom (String): Name of the colonist.
+- ListePreferences (List<String>): List of preferred resources for the colonist.
+- RessourceAttribuee (String): The resource currently assigned to the colonist.
+
+Constructors:
+1. Colon(String nom): Initializes a colonist with a name and empty preferences.
+2. Colon(Colon autre): Copy constructor to clone a colonist.
+
+Methods:
+- String toString(): Returns a string representation of the colon.
+- boolean ajoutPreferences(List<String> ressourcesDisponibles): Adds preferences if none exist.
+- String getNom(): Gets the colonist's name.
+- List<String> getListePreferences(): Gets the list of resource preferences.
+- void setListePreferences(List<String> listePreferences): Sets the list of preferences, validating input.
+- String getRessourceAttribuee(): Gets the assigned resource.
+- void setRessourceAttribuee(String ressourceAttribuee): Assigns a resource to the colonist.
+- boolean prefereRessource(String ressource): Checks if a resource is preferred over the currently assigned one.
+- boolean prefereRessource(String r1, String r2): Compares preferences between two resources.
+
+Validations:
+- All resources in preferences must be alphanumeric.
+- Assigned resources cannot be null.
+
+Exceptions:
+- IllegalArgumentException: Thrown for invalid or null input in preference or resource assignment.
+
